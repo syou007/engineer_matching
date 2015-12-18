@@ -1,0 +1,76 @@
+// Place all the styles related to the admin/admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+ログイン周り
+*/
+.admin.login {
+  @import url(http://fonts.googleapis.com/css?family=Roboto:400);
+  body {
+    background-color:#fff;
+    -webkit-font-smoothing: antialiased;
+    font: normal 14px Roboto,arial,sans-serif;
+  }
+
+  .container {
+    padding: 25px;
+    position: fixed;
+  }
+
+  .form-login {
+    background-color: #EDEDED;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+  }
+
+  h4 {
+    border:0 solid #fff;
+    border-bottom-width:1px;
+    padding-bottom:10px;
+    text-align: center;
+  }
+
+  .form-control {
+    border-radius: 10px;
+  }
+
+  .wrapper {
+    text-align: center;
+  }
+}
+
+.admin {
+  /*
+  ナビゲーション周り
+  */
+  .navbar-brand { position: relative; z-index: 2; }
+
+  .navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; }
+
+  .navbar .navbar-collapse { position: relative; }
+  .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
+
+  .navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }
+  .navbar.navbar-default .nav-collapse { background-color: #f8f8f8; }
+  .navbar.navbar-inverse .nav-collapse { background-color: #222; }
+  .navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; }
+  .nav-collapse>li { float: right; }
+
+  .btn.btn-circle { border-radius: 50px; }
+  .btn.btn-outline { background-color: transparent; }
+
+  @media screen and (max-width: 767px) {
+    .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 15px; padding-right: 15px; }
+
+    .navbar .nav-collapse { margin: 7.5px auto; padding: 0; }
+    .navbar .nav-collapse .navbar-form { margin: 0; }
+    .nav-collapse>li { float: none; }
+  }
+}

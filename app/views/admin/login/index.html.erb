@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-offset-5 col-md-3">
+    <div class="form-login">
+      <%= form_tag admin_login_path, class: "form-signin" do %>
+          <h4>システム管理画面.</h4>
+          <%= text_field_tag :account, nil, class: "form-control input-sm chat-input", placeholder: "アカウント" %>
+          <br/>
+          <%= password_field_tag :password, nil, class: "form-control input-sm chat-input", placeholder: "パスワード" %>
+          <br/>
+          <%= flash_message %>
+          <div class="wrapper">
+            <span class="group-btn">
+              <button class="btn btn-primary btn-md" type="submit">ログイン <i class="fa fa-sign-in"></i></button>
+            </span>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
