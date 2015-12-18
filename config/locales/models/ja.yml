@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    attributes:
+      # ユーザー情報
+      admin_user:
+        account: アカウント
+        password: パスワード
+        password_confirmation: パスワード確認
+        name: 名前

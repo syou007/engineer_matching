@@ -8,11 +8,19 @@ Rails.application.routes.draw do
   # TOPページ
   root 'public/index#index'
 
+  # システム管理画面
+  draw :admin
+
+  # 企業管理画面
+
+  # エンジニア管理画面
+
   # 公開用ページは`config/routes/public.rb`に記載
   draw :public
 
-  # 全てにマッチし無い場合はTOPページを表示
-  get '*anything' => 'public/index#index'
+  # 全てにマッチしない場合はTOPページを表示
+  get '*anything' => 'public/index#redirect_top' if Rails.env.production?
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

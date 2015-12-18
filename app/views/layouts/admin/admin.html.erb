@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja" class="admin <%= controller_name %> <%= action_name %>">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>管理画面</title>
+
+  <!-- Bootstrap core CSS -->
+  <%= stylesheet_link_tag "/css/bootstrap.min.css" %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag '/js/bootstrap.min.js' %>
+
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+<% if admin_login? %>
+    <div class="container-fluid">
+      <!-- Second navbar for sign in -->
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">システム画面</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="navbar-collapse-2">
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to "Top", admin_top_path %></li>
+              <li>
+                <%= link_to "Sign out", admin_path, method: :delete, class: "btn btn-default btn-outline btn-circle", data: {confirm: "Sign outします。\nよろしいですか？"} %>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+      </nav><!-- /.navbar -->
+    </div><!-- /.container-fluid -->
+<% end %>
+<div class="container">
+  <%= yield %>
+</div>
+
+</body>
+</html>

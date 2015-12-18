@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# 管理ユーザーを作成します。
+AdminUser.create(account: "admin", password: "testtest", password_confirmation: "testtest", name: "admin") if AdminUser.count == 0
