@@ -8,7 +8,7 @@ module Admin::AdminHelper
   def active_class(controller = nil, action = nil, attr: "")
     controller ||= controller_name
     action ||= action_name
-    return " class='active #{attr}'".html_safe if action_name == action.to_s && controller.to_s == controller_name
-    " class='#{attr}'".html_safe if attr
+    return "active #{attr}" if action_name == action.to_s && controller.to_s == controller_name
+    attr
   end
 end

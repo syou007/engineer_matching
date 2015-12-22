@@ -33,6 +33,13 @@ gem 'bcrypt', '~> 3.1.7'
 # https://github.com/vmg/redcarpet
 gem 'redcarpet'
 
+# Haml追加
+#
+# 以下のコマンドで一括変換
+# gem install erb2haml
+# rake haml:erb2haml
+gem 'haml-rails'
+
 # メールアドレスチェック
 gem 'validates_email_format_of'
 
