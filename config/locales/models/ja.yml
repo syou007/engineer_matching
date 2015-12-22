@@ -6,4 +6,16 @@ ja:
         account: アカウント
         password: パスワード
         password_confirmation: パスワード確認
-        name: 名前
+        name: 担当者
+
+      # 企業
+      company:
+        name: 企業名
+        overview: 概要
+
+      # 企業担当者
+      company_user:
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード確認
+        name: 担当者

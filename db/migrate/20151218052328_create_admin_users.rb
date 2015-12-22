@@ -5,7 +5,7 @@ class CreateAdminUsers < ActiveRecord::Migration
       t.string :account, null: false
       # ユーザーパスワード
       t.string :password_digest, null: false
-      # 担当者名
+      # 担当者
       t.string :name, null: false
 
       # パスワードを変更しているか？

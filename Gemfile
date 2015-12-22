@@ -29,6 +29,18 @@ gem 'dotenv-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Markdown
+# https://github.com/vmg/redcarpet
+gem 'redcarpet'
+
+# メールアドレスチェック
+gem 'validates_email_format_of'
+
+# 簡易的なUI作成用
+# https://github.com/plataformatec/simple_form
+# rails generate simple_form:install --bootstrap
+gem 'simple_form'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
