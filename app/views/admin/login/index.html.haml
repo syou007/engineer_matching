@@ -1,0 +1,15 @@
+.row
+  .col-md-offset-5.col-md-3
+    .form-login
+      = form_tag admin_login_path, class: "form-signin" do
+        %h4 システム管理画面.
+        = text_field_tag :account, nil, class: "form-control input-sm chat-input", placeholder: "アカウント"
+        %br/
+        = password_field_tag :password, nil, class: "form-control input-sm chat-input", placeholder: "パスワード"
+        %br/
+        = flash_message
+        .wrapper
+          %span.group-btn
+            %button.btn.btn-primary.btn-md{:type => "submit"}
+              ログイン
+              %i.fa.fa-sign-in
