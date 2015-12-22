@@ -8,4 +8,7 @@ namespace :admin, path: ENV['SYSTEM_URL'] do
 
   # ログイン直後のページ
   get 'top' => "admin#top"
+
+  # 企業情報
+  resources :companies
 end

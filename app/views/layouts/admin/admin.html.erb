@@ -26,36 +26,41 @@
 
 <body>
 <% if admin_login? %>
-    <div class="container-fluid">
-      <!-- Second navbar for sign in -->
-      <nav class="navbar navbar-default">
-        <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">システム画面</a>
-          </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="navbar-collapse-2">
-            <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to "Top", admin_top_path %></li>
-              <li>
-                <%= link_to "Sign out", admin_path, method: :delete, class: "btn btn-default btn-outline btn-circle", data: {confirm: "Sign outします。\nよろしいですか？"} %>
-              </li>
-            </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container -->
-      </nav><!-- /.navbar -->
-    </div><!-- /.container-fluid -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to "管理画面", admin_top_path, class: "navbar-brand" %>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li<%= active_class(:companies, attr: "dropdown") %>>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">会社 <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><%= link_to "会社一覧", admin_companies_path %></li>
+                <li><%= link_to "会社登録", new_admin_company_path %></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">管理者</a></li>
+            <li>
+              <%= link_to "Sign out", admin_path, method: :delete, data: {confirm: "Sign outします。\nよろしいですか？"} %>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 <% end %>
-<div class="container">
-  <%= yield %>
+<div class="container" role="main">
+  <div class="page">
+    <%= yield %>
+  </div>
 </div>
 
 </body>

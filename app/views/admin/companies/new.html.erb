@@ -1,0 +1,9 @@
+<div class="page-header">
+  <h1>会社登録</h1>
+  <p>本サービスを利用する会社を登録してください。</p>
+</div>
+<%= simple_form_for([:admin, @company]) do |f| %>
+    <%= f.input :name, placeholder: "株式会社 XXX" %>
+    <%= f.input :overview, hint: "※マークダウン形式", placeholder: "# 株式会社 XXX\n\n## 概要", input_html: {size: "10x10"} %>
+    <%= f.button :submit, "登録" %>
+<% end %>

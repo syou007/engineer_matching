@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151218052328) do
+ActiveRecord::Schema.define(version: 20151222015432) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "account",             limit: 255,                 null: false
@@ -20,6 +20,23 @@ ActiveRecord::Schema.define(version: 20151218052328) do
     t.boolean  "password_change_flg",             default: false, null: false
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "name",              limit: 255,               null: false
+    t.text     "overview",          limit: 65535
+    t.integer  "follow_user_count", limit: 4,     default: 0, null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+  end
+
+  create_table "company_users", force: :cascade do |t|
+    t.integer  "company_id",      limit: 4,   null: false
+    t.string   "email",           limit: 255, null: false
+    t.string   "password_digest", limit: 255, null: false
+    t.string   "name",            limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
 end
