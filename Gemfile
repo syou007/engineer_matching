@@ -29,6 +29,10 @@ gem 'dotenv-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# ページング
+# rails g kaminari:views bootstrap3
+gem 'kaminari'
+
 # Markdown
 # https://github.com/vmg/redcarpet
 gem 'redcarpet'

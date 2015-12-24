@@ -5,7 +5,8 @@ class Admin::AdminController < ApplicationController
 
   # ログイン直後
   def top
-
+    # 現在の登録会社数などを表示する予定
+    @company_count = Company.count
   end
 
   private

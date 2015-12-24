@@ -1,6 +1,7 @@
 class Admin::CompaniesController < Admin::AdminController
   # 会社一覧
   def index
+    @companies = Company.includes(:company_users).page(params[:page])
   end
 
   # 会社登録
@@ -18,7 +19,7 @@ class Admin::CompaniesController < Admin::AdminController
       render :new
     elsif @company.save
       # 保存処理
-      render :index
+      redirect_to({action: :index}, flash: {info: "登録しました"})
     else
       # 確認画面
       render :new
