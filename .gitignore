@@ -13,3 +13,5 @@
 /tmp
 .idea
 .env
+/db/schema.rb
+Gemfile.lock
