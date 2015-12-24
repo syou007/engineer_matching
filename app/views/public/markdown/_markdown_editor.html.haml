@@ -1,0 +1,16 @@
+.markdown
+  .panel.panel-login
+    .panel-heading
+      .row
+        .col-xs-6
+          %a#markdown-edit-link.active{:href => "#"} 編集
+        .col-xs-6
+          %a#markdown-preview-link{:href => "#", "preview-url" => markdown_preview_path} プレビュー
+      %hr/
+    .panel-body
+      .row
+        .col-lg-12
+          #markdown-edit-view{:style => ":display block;"}
+            = markdown_editor.call()
+          #markdown-preview-view{:style => "display: none;"}
+            %h2 プレビュー作成中...

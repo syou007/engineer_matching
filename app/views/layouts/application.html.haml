@@ -1,10 +1,25 @@
 !!!
-%html
+%html{:class => "public #{controller_name} #{action_name}", :lang => "ja"}
   %head
+    %meta{:charset => "utf-8"}/
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title EngineerMatching
+    %meta{:content => "no-cache", "http-equiv" => "Pragma"}/
+    %meta{:content => "no-cache", "http-equiv" => "Cache-Control"}/
+    %meta{:content => "0", "http-equiv" => "Expires"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    / The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    %title<>
+      = "#{AppConfig.get(:service_name)} | #{@title}"
+    / Bootstrap core CSS
+    = stylesheet_link_tag "/css/bootstrap.min.css"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag '/js/bootstrap.min.js'
     = csrf_meta_tags
   %body
-    = yield
+    .container{:role => "main"}
+      .page
+        = yield

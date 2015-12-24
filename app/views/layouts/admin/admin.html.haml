@@ -11,7 +11,8 @@
     / The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
     %meta{:content => "", :name => "description"}/
     %meta{:content => "", :name => "author"}/
-    %title 管理画面
+    %title<>
+      = "#{AppConfig.get(:service_name)}管理画面"
     / Bootstrap core CSS
     = stylesheet_link_tag "/css/bootstrap.min.css"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true

@@ -25,4 +25,13 @@ module ApplicationHelper
     "<div class='alert #{tag}' role='alert'>#{message}</div>".html_safe if message
   end
 
+  # マークダウンで表示する。
+  def markdown(text)
+    unless @markdown
+      renderer = Redcarpet::Render::OriginalHTML.new(filter_html: true, hard_wrap: true)
+      @markdown = Redcarpet::Markdown.new(renderer, tables: true)
+    end
+
+    @markdown.render(text).html_safe
+  end
 end

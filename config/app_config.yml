@@ -1,0 +1,10 @@
+# 環境周り
+app:
+  # サービス名
+  service_name: "エンジニアによる案件検索サービス"
+
+  # 起動モードで変更する
+  env:
+    development:
+      # デバッグフラグ
+      debug: true
