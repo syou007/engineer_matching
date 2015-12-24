@@ -9,3 +9,9 @@ controller 'public/index' do
   # ex)
   # get '/page' => :page
 end
+
+# Markdown用
+controller 'public/markdown' do
+  # Markdown変換用
+  post '/markdown/preview' => :preview, as: :markdown_preview
+end

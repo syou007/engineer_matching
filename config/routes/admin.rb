@@ -9,5 +9,8 @@ namespace :admin, path: ENV['SYSTEM_URL'] do
   get 'top' => "admin#top"
 
   # 企業情報
-  resources :companies
+  resources :companies do
+    # 企業担当者
+    resources :company_users, path: :users
+  end
 end

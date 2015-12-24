@@ -5,6 +5,10 @@ class ActionDispatch::Routing::Mapper
 end
 
 Rails.application.routes.draw do
+  namespace :public do
+  get 'markdown/preview'
+  end
+
   # TOPページ
   root 'public/index#index'
 

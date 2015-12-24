@@ -1,2 +1,3 @@
-%h1 Company::Public#index
-%p Find me in app/views/company/public/index.html.haml
+- @title = @company.name
+%div
+  = markdown @company.overview

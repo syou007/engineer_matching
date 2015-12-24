@@ -4,8 +4,13 @@
 = simple_form_for([:admin, @company]) do |f|
   - if @company.confirming.blank?
     = f.input :name, placeholder: "株式会社 XXX", required: true
-    = f.input :overview, hint: "※マークダウン形式(省略可)", placeholder: "# 株式会社 XXX\n\n## 概要", input_html: {size: "10x10"}
+    -#simple fomrに直接指定したい場合は以下のように行う。
+    -#= f.input :overview, hint: "※マークダウン形式(省略可)", placeholder: "# 株式会社 XXX\n\n## 概要", input_html: {size: "10x10"}
+    = f.input :overview, hint: "※マークダウン形式(省略可)" do
+      = markdown_editor do
+        - f.text_area :overview, class: "text optional form-control", placeholder: "# 株式会社 XXX\n\n## 概要", size: "10x10"
     = f.button :submit, "確認画面へ進む"
+
   - else
     .form-group.string
       %label.string.required.control-label
