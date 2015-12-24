@@ -1,3 +1,4 @@
+# ランディングページ用のコントローラーです。
 class Public::IndexController < ApplicationController
   def index
   end

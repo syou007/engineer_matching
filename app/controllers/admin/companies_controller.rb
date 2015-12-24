@@ -1,3 +1,4 @@
+# 管理画面で扱う会社情報です。
 class Admin::CompaniesController < Admin::AdminController
   # 会社一覧
   def index
