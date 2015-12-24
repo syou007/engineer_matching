@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   draw :admin
 
   # 企業管理画面
+  draw :company
 
   # エンジニア管理画面
 

@@ -1,4 +1,3 @@
-
 # システム管理画面(ログイン用URLを推測できないようにEnvに切り出す。)
 namespace :admin, path: ENV['SYSTEM_URL'] do
   # ログインページ

@@ -13,6 +13,7 @@
           %th 担当者人数
           %th 登録日
           %th 更新日
+          %th 公開ページ
       %tbody
         - @companies.each_with_index do |company, index|
           %tr
@@ -26,3 +27,5 @@
               = company.created_at
             %td
               = company.updated_at
+            %td
+              = link_to "公開ページ", company_path(company.name)

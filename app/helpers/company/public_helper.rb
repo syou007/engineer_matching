@@ -1,0 +1,2 @@
+module Company::PublicHelper
+end
