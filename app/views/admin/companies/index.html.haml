@@ -3,96 +3,26 @@
   %p 本サービスに登録している会社一覧
 .row
   .col-md-12
+    = flash_message
+    = paginate(@companies)
     %table.table
       %thead
         %tr
           %th #
-          %th First Name
-          %th Last Name
-          %th Username
+          %th 会社名
+          %th 担当者人数
+          %th 登録日
+          %th 更新日
       %tbody
-        %tr
-          %td 1
-          %td Mark
-          %td Otto
-          %td @mdo
-        %tr
-          %td 2
-          %td Jacob
-          %td Thornton
-          %td @fat
-        %tr
-          %td 3
-          %td Larry
-          %td the Bird
-          %td @twitter
-        %tr
-          %td 3
-          %td Larry
-          %td the Bird
-          %td @twitter
-        %tr
-          %td 3
-          %td Larry
-          %td the Bird
-          %td @twitter
-        %tr
-          %td 3
-          %td Larry
-          %td the Bird
-          %td @twitter
-        %tr
-          %td 3
-          %td Larry
-          %td the Bird
-          %td @twitter
-        %tr
-          %td 3
-          %td Larry
-          %td the Bird
-          %td @twitter
-        %tr
-          %td 3
-          %td Larry
-          %td the Bird
-          %td @twitter
-        %tr
-          %td 3
-          %td Larry
-          %td the Bird
-          %td @twitter
-        %tr
-          %td 3
-          %td Larry
-          %td the Bird
-          %td @twitter
-        %tr
-          %td 3
-          %td Larry
-          %td the Bird
-          %td @twitter
-        %tr
-          %td 3
-          %td Larry
-          %td the Bird
-          %td @twitter
-        %tr
-          %td 3
-          %td Larry
-          %td the Bird
-          %td @twitter
-        %tr
-          %td 3
-          %td Larry
-          %td the Bird
-          %td @twitter
-        %tr
-          %td 3
-          %td Larry
-          %td the Bird
-          %td @twitter
-        %tr
-          %td 3
-          %td Larry
-          %td the Bird
-          %td @twitter
+        - @companies.each_with_index do |company, index|
+          %tr
+            %td
+              = (@companies.current_page - 1) * @companies.limit_value + index + 1
+            %td
+              = company.name
+            %td
+              = company.company_users.size
+            %td
+              = company.created_at
+            %td
+              = company.updated_at

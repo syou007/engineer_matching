@@ -21,6 +21,6 @@
     -#preserveを使用しないとvalueに無用なスペースが入る。
     = preserve f.hidden_field :overview
     = f.button :submit, "入力画面へ戻る", name: :back
-    = f.button :submit, "上記の内容で登録する"
+    = f.button :submit, "上記の内容で登録する", class: "btn-success"
 
   = f.hidden_field :confirming

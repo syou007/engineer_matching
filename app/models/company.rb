@@ -11,4 +11,8 @@ class Company < ActiveRecord::Base
 
   # 確認画面表示用
   include CheckConfirming
+
+  # 標準は更新順
+  default_scope {order(updated_at: :desc)}
+
 end
