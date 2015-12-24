@@ -12,9 +12,15 @@ class Admin::CompaniesController < Admin::AdminController
   def create
     @company = Company.new(company_params)
 
-    if @company.valid?
+    if params[:back].present?
+      # 戻る処理
+      @company.confirming = false
+      render :new
+    elsif @company.save
+      # 保存処理
       render :index
     else
+      # 確認画面
       render :new
     end
   end
