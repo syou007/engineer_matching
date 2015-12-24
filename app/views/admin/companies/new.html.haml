@@ -5,7 +5,22 @@
   - if @company.confirming.blank?
     = f.input :name, placeholder: "株式会社 XXX", required: true
     = f.input :overview, hint: "※マークダウン形式(省略可)", placeholder: "# 株式会社 XXX\n\n## 概要", input_html: {size: "10x10"}
-    = f.button :submit, "確認画面へ"
+    = f.button :submit, "確認画面へ進む"
   - else
+    .form-group.string
+      %label.string.required.control-label
+        = t "activerecord.attributes.company.name"
+      %p.form-control-static
+        = @company.name
+    .form-group.string
+      %label.string.required.control-label
+        = t "activerecord.attributes.company.overview"
+      %p.form-control-static
+        = @company.overview.gsub("\r\n", "<br/>").html_safe
+    = f.hidden_field :name
+    -#preserveを使用しないとvalueに無用なスペースが入る。
+    = preserve f.hidden_field :overview
+    = f.button :submit, "入力画面へ戻る", name: :back
     = f.button :submit, "上記の内容で登録する"
+
   = f.hidden_field :confirming

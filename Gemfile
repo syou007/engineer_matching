@@ -39,6 +39,8 @@ gem 'redcarpet'
 # gem install erb2haml
 # rake haml:erb2haml
 gem 'haml-rails'
+# 必要になったら使用する。
+# gem "sanitize"
 
 # メールアドレスチェック
 gem 'validates_email_format_of'
