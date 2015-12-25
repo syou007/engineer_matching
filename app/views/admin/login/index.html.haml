@@ -2,7 +2,7 @@
   .col-md-offset-5.col-md-3
     .form-login
       = form_tag admin_login_path, class: "form-signin" do
-        %h4 システム管理画面.
+        %h4 システム管理画面
         = text_field_tag :account, nil, class: "form-control input-sm chat-input", placeholder: "アカウント"
         %br/
         = password_field_tag :password, nil, class: "form-control input-sm chat-input", placeholder: "パスワード"
