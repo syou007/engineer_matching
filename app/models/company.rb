@@ -5,6 +5,7 @@ class Company < ActiveRecord::Base
 
   # 企業名
   validates :name,
+            uniqueness: true,
             length: { in: 2..250, allow_blank: true },
             presence: true,
             allow_nil: true
